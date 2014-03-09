@@ -1,0 +1,9 @@
+<h1>Search Results <small>for <%= @terms %></small></h1>
+<ul class="list-group">
+  <% @results.each do |result| %>
+  <li class="list-group-item">
+    <strong><%= result['versetext'] %></strong><br />
+    <em><%= result['reference'] %></em>
+  </li>
+  <% end %>
+</ul>

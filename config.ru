@@ -1,0 +1,2 @@
+require './ukweli'
+run Ukweli
