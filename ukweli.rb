@@ -36,7 +36,8 @@ class Ukweli < Sinatra::Base
   end
 
   get '/:index/:id' do
-    document = ES.get(params[:index], params[:id])
+    reference = params[:id].gsub(/_/, ' ').gsub(/-/, ' ').gsub(/\./, ' ')
+    document = ES.get(params[:index], reference)
     source   = document['_source']
 
     @versetext = source['text']
